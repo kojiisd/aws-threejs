@@ -104,6 +104,23 @@
 		<script src="../js/controls/TrackballControls.js"></script>
 		<script src="../js/renderers/CSS3DRenderer.js"></script>
 
+		<script src="../extralib/aws-sdk.min.js"></script>
+		<script	src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="../extralib/axios/dist/axios.standalone.js"></script>
+		<script type="text/javascript" src="../extralib/CryptoJS/rollups/hmac-sha256.js"></script>
+		<script type="text/javascript" src="../extralib/CryptoJS/rollups/sha256.js"></script>
+		<script type="text/javascript" src="../extralib/CryptoJS/components/hmac.js"></script>
+		<script type="text/javascript" src="../extralib/CryptoJS/components/enc-base64.js"></script>
+		<script type="text/javascript" src="../extralib/url-template/url-template.js"></script>
+		<script type="text/javascript" src="../extralib/apiGatewayCore/sigV4Client.js"></script>
+		<script type="text/javascript" src="../extralib/apiGatewayCore/apiGatewayClient.js"></script>
+		<script type="text/javascript" src="../extralib/apiGatewayCore/simpleHttpClient.js"></script>
+		<script type="text/javascript" src="../extralib/apiGatewayCore/utils.js"></script>
+		<script type="text/javascript" src="../extralib/apigClient.js"></script>
+
+		<script src="../js/script.js"></script>
+
 		<div id="container"></div>
 		<div id="info"><a href="http://threejs.org" target="_blank">three.js css3d</a> - periodic table. <a href="https://plus.google.com/113862800338869870683/posts/QcFk5HrWran" target="_blank">info</a>.</div>
 		<div id="menu">
@@ -111,9 +128,11 @@
 			<button id="sphere">SPHERE</button>
 			<button id="helix">HELIX</button>
 			<button id="grid">GRID</button>
+			<button id="getData">Get Data from S3</button>
 		</div>
 
 		<script>
+
 
 			var table = [
 				"H", "Hydrogen", "1.00794", 1, 1,
@@ -258,6 +277,7 @@
 
 					var element = document.createElement( 'div' );
 					element.className = 'element';
+					element.id = table[ i ];
 					element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
 
 					var number = document.createElement( 'div' );
@@ -462,6 +482,7 @@
 				renderer.render( scene, camera );
 
 			}
+
 
 		</script>
 	</body>

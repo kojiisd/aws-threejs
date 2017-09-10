@@ -13,15 +13,12 @@ from boto3.session import Session
 
 args = sys.argv
 
-if len(args) < 2:
-    print "Usage: python data-insert.py <FileName>"
+if len(args) < 4:
+    print "Usage: python data-insert.py <FileName> <Region> <Table>"
     sys.exit()
 
-dynamodb = boto3.resource('dynamodb', endpoint_url="http://localhost:8000/",
-                            region_name='local', 
-                            aws_access_key_id="access",
-                            aws_secret_access_key="secret")
-table = dynamodb.Table("test-three")
+dynamodb = boto3.resource('dynamodb', region_name=args[2])
+table = dynamodb.Table(args[3])
 
 if __name__ == "__main__":
     print "Data insert start."
