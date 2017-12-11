@@ -22,7 +22,8 @@ After that generate API Gateway SDK.
 # Data preparation with data/sample-data.csv and tools/data-insert.py
 data sample
 
-```csvid,score,timestamp
+```csv
+id,score,timestamp
 "H",0,"2017-07-23T16:00:00"
 "H",0,"2017-07-23T16:01:00"
 "H",0,"2017-07-23T16:02:00"
